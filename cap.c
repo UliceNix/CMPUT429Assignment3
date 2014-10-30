@@ -8,19 +8,20 @@
 
 /* This should be manually changed to match the cache 
  * configuration of the simulator
- * /
+ */
 #define LINESIZE 64
 #define STEPS 512 * 1024
 
 int main(){
-        int arraysize, arraylength, lengthmod, run, i, j, sum = 0;
+
+        int arraysize, arraylength, lengthmod, i, ;
         long long start, end;
-        float tv;
         int* array;
 
 
         for(arraysize = 1 * KB; arraysize < MAXCAP; arraysize *= 2){
             
+            /* allocate memory and initialize the array */
             array = malloc(arraysize);
             arraylength = arraysize/sizeof(int);
             lengthmod = arraylength - 1;
@@ -29,12 +30,15 @@ int main(){
             for(i = 0; i < arraylength; i++){
                 array[i] = rand()%5;
             }
+            
+            /* start the timer, modify each cache line */
             start = wall_clock_time();
-
             for(i = 0; i < STEPS; i++){
                 array[(i*LINESIZE/sizeof(int)) & lengthmod]++;
             }
             end = wall_clock_time();
+            
+            /* print the output */
             printf("test cache capacity (KB): %3d time:%lf\n", arraysize/KB, 
                   ((float)(end-start))/1000000000);
                 
