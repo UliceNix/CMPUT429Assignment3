@@ -60,3 +60,35 @@ void init_array(int *start){
             start[i] = rand()%5;
         }
 }
+
+/**
+----OUTPUT FOR MACHINE 1: (cache line size = 64 bytes)
+stepsize:   4 time0.001704
+stepsize:   8 time0.002097
+stepsize:  16 time0.001170
+stepsize:  32 time0.001049
+stepsize:  64 time0.002032 (***)
+stepsize: 128 time0.002031
+stepsize: 256 time0.002032
+stepsize: 512 time0.002031
+
+----OUTPUT FOR MACHINE 2: (cache line size = 128 bytes)
+stepsize:   4 time0.001508
+stepsize:   8 time0.001704
+stepsize:  16 time0.001287
+stepsize:  32 time0.001114
+stepsize:  64 time0.001245
+stepsize: 128 time0.002032 (***)
+stepsize: 256 time0.002031
+stepsize: 512 time0.002032
+
+----OUTPUT FOR MACHINE 3: (cache line size = 8bytes)
+stepsize:   4 time0.004457
+stepsize:   8 time0.007601 (***)
+stepsize:  16 time0.003015
+stepsize:  32 time0.002097
+stepsize:  64 time0.002098
+stepsize: 128 time0.002097
+stepsize: 256 time0.002097
+stepsize: 512 time0.002097
+*/
