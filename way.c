@@ -4,7 +4,6 @@
 
 #define KB 1024
 #define MB 1024 * KB
-#define LINESIZE 64
 #define CAP 32 * KB
 #define REPS 2 * 1024 * 1024
 
