@@ -14,7 +14,7 @@
 
 int main(){
 
-        int arraysize, arraylength, lengthmod, i, ;
+        int arraysize, arraylength, lengthmod, i;
         long long start, end;
         int* array;
 
