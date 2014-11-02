@@ -4,13 +4,13 @@
 #include "timer.h"
 
 #define KB 1024
-#define MAXCAP 512 * KB
+#define MAXCAP KB * KB
 
 /* This should be manually changed to match the cache 
  * configuration of the simulator
  */
 #define LINESIZE 64
-#define STEPS 512 * 1024
+#define STEPS 2 * 1024 * 1024
 
 int main(){
 
