@@ -5,21 +5,23 @@
 
 #define KB 1024
 #define MAXCAP KB * KB
-
-/* This should be manually changed to match the cache 
- * configuration of the simulator
- */
-#define LINESIZE 64
 #define STEPS 2 * 1024 * 1024
 
-int main(){
+int main(int argc, char* argv[]){
 
-        int arraysize, arraylength, lengthmod, i;
+        int arraysize, arraylength, lengthmod, i, linesize;
         long long start, end;
         int* array;
 
+        if(argc > 1){
+            linesize = atoi(argv[1]);
+        }else{
+            printf("Please input the linesize in bytes.\n");
+            return 1;
+        }
 
-        for(arraysize = 1 * KB; arraysize < MAXCAP; arraysize *= 2){
+
+        for(arraysize = 2 * KB; arraysize < MAXCAP; arraysize *= 2){
             
             /* allocate memory and initialize the array */
             array = malloc(arraysize);
@@ -34,7 +36,7 @@ int main(){
             /* start the timer, modify each cache line */
             start = wall_clock_time();
             for(i = 0; i < STEPS; i++){
-                array[(i*LINESIZE/sizeof(int)) & lengthmod]++;
+                array[(i*linesize/sizeof(int)) & lengthmod]++;
             }
             end = wall_clock_time();
             
@@ -44,7 +46,8 @@ int main(){
                 
             free(array);
             
-     }
+        }
+        return 0;
         
 }
 /**

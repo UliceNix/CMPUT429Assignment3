@@ -4,19 +4,28 @@
 
 #define KB 1024
 #define MB 1024 * KB
-#define CAP 32 * KB
 #define REPS 2 * 1024 * 1024
 
-int main(){
+/* */
+
+int main(int argc, char* argv[]){
         
         int arraysize = 5 * MB, 
                 arraylength = arraysize/sizeof(int), 
                 lengthmod = arraylength - 1,
-                i, j, k;
+                i, j, k, cap;
         long long start, end;
-        int* array = malloc(arraysize);
+        int* array;
+
+        if(argc > 1){
+            cap = atoi(argv[1]);
+        }else{
+            printf("Please input the cache capacity in KB.\n");
+            return 1;
+        }
  
         /* array list initialization*/
+        array = malloc(arraysize);
         srand(time(NULL));
         for(i = 0; i < arraylength; i++)
                 array[i] = rand()%5;
@@ -37,7 +46,7 @@ int main(){
             start = wall_clock_time();
             for(j = 1; j < REPS; j++){
                 array[k&lengthmod]++;
-                k+=CAP/i/sizeof(int);
+                k+=cap/i/sizeof(int);
             }
             end = wall_clock_time();
             printf("test way: %2d time:%lf\n", i, 
@@ -46,6 +55,7 @@ int main(){
         }
         
         free(array);
+        return 0;
 }
 
 /**
