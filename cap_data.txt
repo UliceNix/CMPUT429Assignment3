@@ -1,0 +1,229 @@
+
+================================================================================
+*
+*             CACHE LINE SIZE
+*
+================================================================================
+
+mingxun@ug08:~/C429/Assignment3/report_test>./run1.sh
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Jul  5 2013 13:03:12
+gem5 started Nov  2 2014 10:56:57
+gem5 executing on ug08
+command line: gem5.fast machine1.py -c line.arm
+Global frequency set at 1000000000000 ticks per second
+0: system.remote_gdb.listener: listening for remote gdb on port 7000
+**** REAL SIMULATION ****
+info: Entering event queue @ 0.  Starting simulation...
+start testing!
+warn: CP14 unimplemented crn[14], opc1[7], crm[15], opc2[7]
+stepsize:   4 time0.001704
+stepsize:   8 time0.002098
+stepsize:  16 time0.001295
+stepsize:  32 time0.001048
+stepsize:  64 time0.002032
+stepsize: 128 time0.002032
+stepsize: 256 time0.002031
+stepsize: 512 time0.002032
+hack: be nice to actually delete the event here
+Exiting @ tick 70107271500 because target called exit()
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Jul  5 2013 13:03:12
+gem5 started Nov  2 2014 11:04:44
+gem5 executing on ug08
+command line: gem5.fast machine2.py -c line.arm
+Global frequency set at 1000000000000 ticks per second
+0: system.remote_gdb.listener: listening for remote gdb on port 7000
+**** REAL SIMULATION ****
+info: Entering event queue @ 0.  Starting simulation...
+start testing!
+warn: CP14 unimplemented crn[14], opc1[7], crm[15], opc2[7]
+stepsize:   4 time0.001507
+stepsize:   8 time0.001704
+stepsize:  16 time0.001287
+stepsize:  32 time0.001114
+stepsize:  64 time0.001245
+stepsize: 128 time0.002032
+stepsize: 256 time0.002032
+stepsize: 512 time0.002032
+hack: be nice to actually delete the event here
+Exiting @ tick 67232823000 because target called exit()
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Jul  5 2013 13:03:12
+gem5 started Nov  2 2014 11:12:17
+gem5 executing on ug08
+command line: gem5.fast machine3.py -c line.arm
+Global frequency set at 1000000000000 ticks per second
+warn: Block size is neither 16, 32, 64 or 128 bytes.
+0: system.remote_gdb.listener: listening for remote gdb on port 7000
+**** REAL SIMULATION ****
+info: Entering event queue @ 0.  Starting simulation...
+start testing!
+warn: CP14 unimplemented crn[14], opc1[7], crm[15], opc2[7]
+stepsize:   4 time0.004457
+stepsize:   8 time0.007602
+stepsize:  16 time0.003015
+stepsize:  32 time0.002097
+stepsize:  64 time0.002097
+stepsize: 128 time0.002097
+stepsize: 256 time0.002097
+stepsize: 512 time0.002098
+hack: be nice to actually delete the event here
+Exiting @ tick 109977029500 because target called exit()
+
+================================================================================
+*
+*  CAP TEST
+*
+================================================================================
+un@ug11:~/C429/Assignment3/report_test>./cap.sh
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Jul  5 2013 13:03:12
+gem5 started Nov  2 2014 11:00:10
+gem5 executing on ug11
+command line: gem5.fast machine1.py -c cap1.arm
+Global frequency set at 1000000000000 ticks per second
+0: system.remote_gdb.listener: listening for remote gdb on port 7000
+**** REAL SIMULATION ****
+info: Entering event queue @ 0.  Starting simulation...
+warn: CP14 unimplemented crn[14], opc1[7], crm[15], opc2[7]
+test cache capacity (KB):   1 time:0.003146
+test cache capacity (KB):   2 time:0.003146
+test cache capacity (KB):   4 time:0.003146
+test cache capacity (KB):   8 time:0.003146
+test cache capacity (KB):  16 time:0.003146
+test cache capacity (KB):  32 time:0.003146
+test cache capacity (KB):  64 time:0.003146
+test cache capacity (KB): 128 time:0.007078
+test cache capacity (KB): 256 time:0.008127
+test cache capacity (KB): 512 time:0.008127
+hack: be nice to actually delete the event here
+Exiting @ tick 64069303000 because target called exit()
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Jul  5 2013 13:03:12
+gem5 started Nov  2 2014 11:09:56
+gem5 executing on ug11
+command line: gem5.fast machine2.py -c cap2.arm
+Global frequency set at 1000000000000 ticks per second
+0: system.remote_gdb.listener: listening for remote gdb on port 7000
+**** REAL SIMULATION ****
+info: Entering event queue @ 0.  Starting simulation...
+warn: CP14 unimplemented crn[14], opc1[7], crm[15], opc2[7]
+test cache capacity (KB):   1 time:0.003145
+test cache capacity (KB):   2 time:0.003146
+test cache capacity (KB):   4 time:0.003145
+test cache capacity (KB):   8 time:0.003146
+test cache capacity (KB):  16 time:0.003146
+test cache capacity (KB):  32 time:0.003146
+test cache capacity (KB):  64 time:0.008201
+test cache capacity (KB): 128 time:0.008202
+test cache capacity (KB): 256 time:0.008201
+test cache capacity (KB): 512 time:0.008201
+hack: be nice to actually delete the event here
+Exiting @ tick 69741722000 because target called exit()
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Jul  5 2013 13:03:12
+gem5 started Nov  2 2014 11:20:36
+gem5 executing on ug11
+command line: gem5.fast machine3.py -c cap3.arm
+Global frequency set at 1000000000000 ticks per second
+warn: Block size is neither 16, 32, 64 or 128 bytes.
+0: system.remote_gdb.listener: listening for remote gdb on port 7000
+**** REAL SIMULATION ****
+info: Entering event queue @ 0.  Starting simulation...
+warn: CP14 unimplemented crn[14], opc1[7], crm[15], opc2[7]
+test cache capacity (KB):   1 time:0.008389
+test cache capacity (KB):   2 time:0.008389
+test cache capacity (KB):   4 time:0.008389
+test cache capacity (KB):   8 time:0.008389
+test cache capacity (KB):  16 time:0.008389
+test cache capacity (KB):  32 time:0.030406
+test cache capacity (KB):  64 time:0.030407
+test cache capacity (KB): 128 time:0.030407
+test cache capacity (KB): 256 time:0.030407
+test cache capacity (KB): 512 time:0.030407
+hack: be nice to actually delete the event here
+Exiting @ tick 221583986500 because target called exit()
+
+
+================================================================================
+*
+*                       WAY ORDER TEST
+*
+================================================================================
+mingxun@ug18:~/C429/Assignment3/report_test>./way.sh 
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Jul  5 2013 13:03:12
+gem5 started Nov  2 2014 12:06:22
+gem5 executing on ug18
+command line: gem5.fast machine1.py -c way1.arm
+Global frequency set at 1000000000000 ticks per second
+0: system.remote_gdb.listener: listening for remote gdb on port 7000
+**** REAL SIMULATION ****
+info: Entering event queue @ 0.  Starting simulation...
+warn: CP14 unimplemented crn[14], opc1[7], crm[15], opc2[7]
+test way:  1 time:0.015958
+test way:  2 time:0.015794
+test way:  4 time:0.015688
+test way:  8 time:0.014333
+test way: 16 time:0.013668
+test way: 32 time:0.013668
+test way: 64 time:0.013671
+hack: be nice to actually delete the event here
+Exiting @ tick 194739708000 because target called exit()
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Jul  5 2013 13:03:12
+gem5 started Nov  2 2014 12:30:58
+gem5 executing on ug18
+command line: gem5.fast machine2.py -c way2.arm
+Global frequency set at 1000000000000 ticks per second
+0: system.remote_gdb.listener: listening for remote gdb on port 7000
+**** REAL SIMULATION ****
+info: Entering event queue @ 0.  Starting simulation...
+warn: CP14 unimplemented crn[14], opc1[7], crm[15], opc2[7]
+test way:  1 time:0.022726
+test way:  2 time:0.024417
+test way:  4 time:0.020133
+test way:  8 time:0.019940
+test way: 16 time:0.019849
+test way: 32 time:0.019926
+test way: 64 time:0.019971
+hack: be nice to actually delete the event here
+Exiting @ tick 235024734500 because target called exit()
+gem5 Simulator System.  http://gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 compiled Jul  5 2013 13:03:12
+gem5 started Nov  2 2014 12:58:19
+gem5 executing on ug18
+command line: gem5.fast machine3.py -c way3.arm
+Global frequency set at 1000000000000 ticks per second
+warn: Block size is neither 16, 32, 64 or 128 bytes.
+0: system.remote_gdb.listener: listening for remote gdb on port 7000
+**** REAL SIMULATION ****
+info: Entering event queue @ 0.  Starting simulation...
+warn: CP14 unimplemented crn[14], opc1[7], crm[15], opc2[7]
+test way:  1 time:0.020137
+test way:  2 time:0.013632
+test way:  4 time:0.013633
+test way:  8 time:0.013634
+test way: 16 time:0.013637
+test way: 32 time:0.013641
+test way: 64 time:0.013652
+hack: be nice to actually delete the event here
