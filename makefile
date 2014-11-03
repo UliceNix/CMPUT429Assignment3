@@ -11,4 +11,4 @@ line.arm: line.c timer.c timer.h
 cap.arm: cap.c timer.c timer.h
 	$(CC) $(CFLAGS) cap.c timer.c -o cap.arm
 clean:
-	rm -f way line cap
+	rm -f way.arm line.arm cap.arm
