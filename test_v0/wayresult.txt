@@ -1,0 +1,62 @@
+mingxun@ug29:~/C429/Assignment3/batchtest>cat way*.txt
+test way:  1 time:0.009438
+test way:  2 time:0.009307
+test way:  4 time:0.007275
+test way:  8 time:0.004194
+test way: 16 time:0.004195
+test way: 32 time:0.004194
+test way: 64 time:0.004194
+
+
+test way:  1 time:0.018875
+test way:  2 time:0.018875
+test way:  4 time:0.018875
+test way:  8 time:0.018875
+test way: 16 time:0.018875
+test way: 32 time:0.075491
+test way: 64 time:0.039844
+
+
+test way:  1 time:0.018874
+test way:  2 time:0.018875
+test way:  4 time:0.018875
+test way:  8 time:0.009961
+test way: 16 time:0.023068
+test way: 32 time:0.014155
+test way: 64 time:0.004195
+
+
+test way:  1 time:0.014156
+test way:  2 time:0.012582
+test way:  4 time:0.011273
+test way:  8 time:0.008258
+test way: 16 time:0.004194
+test way: 32 time:0.004194
+test way: 64 time:0.004194
+
+
+test way:  1 time:0.019399
+test way:  2 time:0.019398
+test way:  4 time:0.019397
+test way:  8 time:0.039843
+test way: 16 time:0.022543
+test way: 32 time:0.006291
+test way: 64 time:0.006292
+
+
+test way:  1 time:0.015205
+test way:  2 time:0.010224
+test way:  4 time:0.004195
+test way:  8 time:0.004194
+test way: 16 time:0.004194
+test way: 32 time:0.004194
+test way: 64 time:0.004195
+
+
+test way:  1 time:0.075494
+test way:  2 time:0.016778
+test way:  4 time:0.016778
+test way:  8 time:0.016778
+test way: 16 time:0.016778
+test way: 32 time:0.016778
+test way: 64 time:0.016777
