@@ -8,9 +8,6 @@
 #define ARRAY_LENGTH ARRAY_SIZE/sizeof(int)
 #define MAXLINESIZE 1024
 
-/* init_array function initializes an integer array with integers from 0 to 4.*/
-void init_array(int *start);
-
 int main(){
 
         /* initialize variables*/
