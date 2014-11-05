@@ -53,7 +53,7 @@ int main(int argc, char* argv[]){
 
             start = wall_clock_time();
             for(j = 0; j < REPS; j++){
-              
+                k = k&lengthmod;
                 k+=cap/i/sizeof(int);
             }
             end = wall_clock_time();
