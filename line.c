@@ -30,8 +30,10 @@ int main(){
          * turbulences of execution time. When 2^x == cache line size, we will know
          * the time of accessing each cache line T. So in the next iteration, 2^(x+1),
          * we will access every other cache line instead of every cache line, and we
-         * can expect to the execution time to be T/2. So by this time, we'll know
-         * the cache line size.
+         * can expect to the execution time <= T/2,( < T/2 occurs when the number of 
+         * flushing cache is reduced hugely, could be caused by associativity) and 
+         * the execution time for the rest iterations will decrease in this fashion. 
+         * By this time, we'll know the cache line size.
          */
         for(stepsize = 1; stepsize < MAXLINESIZE/sizeof(int); stepsize *= 2){
             start = wall_clock_time();
