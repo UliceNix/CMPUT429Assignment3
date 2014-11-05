@@ -18,7 +18,7 @@ int main(int argc, char* argv[]){
         int* array;
 
         if(argc > 1){
-            cap = atoi(argv[1]);
+            cap = atoi(argv[1]) * KB;
         }else{
             printf("Please input the cache capacity in KB.\n");
             return 1;
@@ -37,8 +37,8 @@ int main(int argc, char* argv[]){
          * We find the correct way order by trying from i = 1 to 64 
          * Assume the number of sets in the cache is n, so every
          * (CAPS/n)th byte will compete for the same cache line.
-         * We access k + (j*CAPS/n)th byte in each iteration.
-         * When CAPS/i >= CAPS/n, namely i <= n, the execution time
+         * We access k + (j*CAP/n)th byte in each iteration.
+         * When CAPS/i >= CAP/n, namely i <= n, the execution time
          * will be relatively high since each access will cause cache
          * miss. We'll see a decrease in execution time when i > n.
          */
@@ -60,41 +60,10 @@ int main(int argc, char* argv[]){
             float overhead = (end-start);
 
             printf("test way: %2d time:%lf\n", i, 
-                   ((float)(totaltime-overhead)));
+                   ((float)(totaltime-overhead))/1000000);
             
         }
         
         free(array);
         return 0;
 }
-
-/**
-OUTPUT FOR MACHINE 1 (4 way)
-test way:  1 time:0.009787
-test way:  2 time:0.010136
-test way:  4 time:0.010136 (n = 4)
-test way:  8 time:0.008127 (****)
-test way: 16 time:0.008127
-test way: 32 time:0.008126
-test way: 64 time:0.008126
-
-OUTPUT FOR MACHINE 2 (2 way)
-test way:  1 time:0.023413
-test way:  2 time:0.024416
-test way:  4 time:0.020132 (****)
-test way:  8 time:0.019937
-test way: 16 time:0.019845
-test way: 32 time:0.019916
-test way: 64 time:0.019952
-
-
-OUTPUT FOR MACHINE 3 (direct mapped)
-test way:  1 time:0.020136
-test way:  2 time:0.013693 (****)
-test way:  4 time:0.013632
-test way:  8 time:0.013631
-test way: 16 time:0.013631
-test way: 32 time:0.013631
-test way: 64 time:0.013631
-
- */
