@@ -6,8 +6,6 @@
 #define MB 1024 * KB
 #define REPS 2 * 1024 * 1024
 
-/* */
-
 int main(int argc, char* argv[]){
         
         int arraysize = 5 * MB, 
@@ -15,17 +13,17 @@ int main(int argc, char* argv[]){
                 lengthmod = arraylength - 1,
                 i, j, k, cap;
         long long start, end;
-        int* array;
+        volatile int* array = malloc(arraysize);
 
         if(argc > 1){
-            cap = atoi(argv[1]) * KB;
+            cap = atoi(argv[1])*KB;
+            printf("Cache capacity: %d\n", cap);
         }else{
-            printf("Please input the cache capacity in KB.\n");
+            printf("Please input cache capacity in KB.\n");
             return 1;
         }
  
         /* array list initialization*/
-        array = malloc(arraysize);
         srand(time(NULL));
         for(i = 0; i < arraylength; i++)
                 array[i] = rand()%5;
@@ -42,28 +40,29 @@ int main(int argc, char* argv[]){
          * will be relatively high since each access will cause cache
          * miss. We'll see a decrease in execution time when i > n.
          */
+        printf("testing starts!\n");
         for(i = 1; i < 64; i *= 2){
+
+            int inc = cap/i/sizeof(int);
+
             start = wall_clock_time();
             for(j = 0; j < REPS; j++){
                 array[k&lengthmod]++;
-                k+=cap/i/sizeof(int);
+                k+=inc;
             }
             end = wall_clock_time();
-            float totaltime = (end-start);
+            float total = end - start;
 
             start = wall_clock_time();
             for(j = 0; j < REPS; j++){
-                k = k&lengthmod;
-                k+=cap/i/sizeof(int);
+                k+=inc;
             }
             end = wall_clock_time();
-            float overhead = (end-start);
-
+            float overhead = end - start;
             printf("test way: %2d time:%lf\n", i, 
-                   ((float)(totaltime-overhead))/1000000);
+                   ((float)(total - overhead))/1000000);
             
         }
         
-        free(array);
-        return 0;
+        free((void*)array);
 }
